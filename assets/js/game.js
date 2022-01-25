@@ -40,7 +40,6 @@ function gameStart(){
 	remNotification = 0;
 	let rand = Math.floor(Math.random() * wordlist.length);
 	chosenWord = wordlist[rand];
-	console.log(wordlist.length)
 
 	let logo = document.createElement('div');
 	logo.className = 'logo';
@@ -172,11 +171,12 @@ function submitWord(wordRow, keyPress){
 		if(wordlist.includes(word)){
 			let answer = [];
 			for(i = 0; i < word.length; i++){
-				answer.push(word[i]);
 				let letter = word[i].toUpperCase();
+				answer.push(letter);
 				let blockClass = 'blockGrey';
 				if(chosenWord.toUpperCase().includes(letter)){
 					if(chosenWord[i].toUpperCase() === letter){
+						score++;
 						blockClass = ' blockGreen';
 						if(count(word, letter) > count(chosenWord, letter)){
 							for(j = 0; j < wordRow.childNodes.length; j++){
@@ -190,13 +190,11 @@ function submitWord(wordRow, keyPress){
 							}
 						}
 					}else{
-						if(count(chosenWord, letter) > 0){
-							if(countOccurrences(answer, letter) <= count(chosenWord, letter)){
-								blockClass = ' blockGold';
-							}
-							else{
-								blockClass = ' blockGrey';
-							}
+						if(countOccurrences(answer, letter) <= count(chosenWord, letter)){
+							blockClass = ' blockGold';
+						}
+						else{
+							blockClass = ' blockGrey';
 						}
 					}
 				}
