@@ -39,7 +39,7 @@ function gameStart(){
 	score = 0;
 	remNotification = 0;
 	let rand = Math.floor(Math.random() * answers.length);
-	chosenWord = answers[rand];
+	chosenWord = answers[rand].toUpperCase();
 
 	let logo = document.createElement('div');
 	logo.className = 'logo';
