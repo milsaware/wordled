@@ -38,8 +38,8 @@ function gameStart(){
 	nextRowBlock = 0;
 	score = 0;
 	remNotification = 0;
-	let rand = Math.floor(Math.random() * wordlist.length);
-	chosenWord = wordlist[rand];
+	let rand = Math.floor(Math.random() * answers.length);
+	chosenWord = answers[rand];
 
 	let logo = document.createElement('div');
 	logo.className = 'logo';
