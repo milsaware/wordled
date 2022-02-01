@@ -1,7 +1,7 @@
 /*
-The master list of 12478 words that can be used for guesses. This
-is needed to prevent guesses like "abcde", "aeiou", etc. from
-being used to find out which letters are in the correct answer.
+The master list of over 12,000 words that can be used for guesses.
+This is needed to prevent invalid guesses like "abcde", "aeiou", etc.
+from being used to find out which letters are in the correct answer.
 */
 
 let wordlist = ["AAHED", "AALII", "AARGH", "AARTI", "ABACA", "ABACI",

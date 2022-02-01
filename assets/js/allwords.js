@@ -1,5 +1,5 @@
 /*
-Randomly choose any word from the 12478 words in words.js as the correct answer.
+Randomly choose any word from over 12,000 words in words.js as the correct answer.
 This makes winning exceedingly difficult.
 */
 
