@@ -1,4 +1,7 @@
 <!doctype html>
+
+<!--- Open this file in your browser to play the game. --->
+
 <html>
 
 <head>
@@ -12,7 +15,15 @@
 <body>
 	<noscript id="no_script"></noscript>
 	<script src="./assets/js/words.js"></script>
-	<script src="./assets/js/youngsters.js"></script>
+<!---
+    You can add other files in assets/js containing correct answers, but only
+    one can be used. Just change the file name below.
+    
+    The original program randomly picked from all 12478 words in words.js,
+    which proved exceedingly difficult to win. To restore this behavior,
+    change youngsters.js to allwords.js
+--->
+	<script src="./assets/js/youngsters.js"></script> <!--- 100 easy words --->
 	<script src="./assets/js/game.js"></script>
 </body>
 
