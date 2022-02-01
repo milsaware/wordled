@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# System generated files
+*~
+.~lock.*
+*.swp
+
+# Local backups
+*.bak
+
+# Used to hide testing or experiments
+/experiments
