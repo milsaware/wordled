@@ -1,3 +1,9 @@
+/*
+This is the Javascript code which runs Wordled in your browser.
+The detailed explanation of how it was built is available at:
+https://ozboware.co.uk/one-way-to-make-a-wordle-type-game-using-javascript
+*/
+
 let currentRow = 0;
 let nextRowBlock = 0;
 let score = 0;

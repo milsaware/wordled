@@ -1,3 +1,8 @@
+/*
+A list of 100 words suitable for younger children obtained from:
+http://www.yougowords.com/kindergarten-words/5-letters
+*/
+
 let answers = ["about", "above", "after", "again", "alone", "apple",
 "beach", "begin", "black", "bring", "brown", "bunny", "camel",
 "candy", "carry", "child", "clean", "close", "color", "count",
