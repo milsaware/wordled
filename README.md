@@ -6,9 +6,9 @@ A Wordle based game made in Javascript
 - 5 levels ranging from beginner to god mode.
 - 2 difficulty settings.
 - Up to 13,000 words to play
-- New score keeping function for each level/diffculty
+- New score keeping function for each level/difficulty
 - New streak keeping function for each level/difficulty
-- Home screen meny
+- Home screen menu
 - Instructions in game
 - Ability to create a custom list of words
 - New animations
