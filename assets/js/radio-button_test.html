@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Radio Button Test</title>
+</head>
+
+<body>
+    <p>Select a difficulty level:</p>
+    <div id="group">
+    </div>
+
+    <p id="output"></p>
+
+    <script>
+        const levels = [
+            { value: 'level1', label: '<b>Level 1:</b> 100 words suitable for young children' },
+            { value: 'level2', label: '<b>Level 2:</b> over 1000 commmon words' },
+            { value: 'level3', label: '<b>Level 3:</b> over 2500 words' },
+            { value: 'level4', label: '<b>Level 4:</b> over 3400 words' },
+            { value: 'level5', label: '<b>Level 5:</b> over 13,000 words' },
+        ];
+        
+        // generate the radio groups
+        const group = document.querySelector('#group');
+        group.innerHTML = levels
+            .map(
+                item => `<div>
+                        <input type="radio" name="level" value="${item.value}" id="${item.value}">
+                        <label for="${item.value}">${item.label}</label>
+                    </div>`
+            )
+            .join(' ');
+        
+        // add an event listener for the change event
+        const radioButtons = document.querySelectorAll('input[name="level"]');
+        for (const radioButton of radioButtons) {
+            radioButton.addEventListener('change', showSelected);
+        }
+        
+        function showSelected(e) {
+            console.log(e);
+            if (this.checked) {
+                document.querySelector('#output').innerText = `You selected ${this.value}`;
+            }
+        }
+    </script>
+</body>
+
+</html>
