@@ -14,9 +14,9 @@ A Wordle based game made in Javascript
 - New animations
 - Fade in / fade out modal
 
-A beginner mode built in complete with 100 words for the younger players. The higher the level, the higher the score you get for each word guessed. There's a score penalty for each time you guess wrong as well as if you give up on the word.
+A beginner mode built in complete with 100 words for the younger players. The higher the level, the more words available and the higher the score you get for each word guessed. There's a score penalty for each time you guess wrong as well as if you give up on the word.
 
-To create your own list, simply edit the ```custom``` variable in **assets/js/word.js**.
+To create your own list, simply edit the ```custom``` variable in **assets/js/word.js** then choose the **custom** level in the game.
 
 **No installation required**
 
@@ -27,6 +27,7 @@ Wordled can be played in the browser, simply open the index.html file in any bro
 Wordled can now be played online at [wordled.online](https://wordled.online)
 
 **Languages used**
+
 Javascript, CSS, HTML
 
 **Screenshots**
