@@ -6,17 +6,17 @@ A Wordle based game made in Javascript
 - 5 levels ranging from beginner to god mode.
 - 2 difficulty settings.
 - Up to 13,000 words to play
-- New score keeping function for each level/diffculty
+- New score keeping function for each level/difficulty
 - New streak keeping function for each level/difficulty
-- Home screen meny
+- Home screen menu
 - Instructions in game
 - Ability to create a custom list of words
 - New animations
 - Fade in / fade out modal
 
-A beginner mode built in complete with 100 words for the younger players. The higher the level, the higher the score you get for each word guessed. There's a score penalty for each time you guess wrong as well as if you give up on the word.
+A beginner mode built in complete with 100 words for the younger players. The higher the level, the more words available and the higher the score you get for each word guessed. There's a score penalty for each time you guess wrong as well as if you give up on the word.
 
-To create your own list, simply edit the ```custom``` variable in **assets/js/word.js**.
+To create your own list, simply edit the ```custom``` variable in **assets/js/word.js** then choose the **custom** level in the game.
 
 **No installation required**
 
@@ -27,6 +27,7 @@ Wordled can be played in the browser, simply open the index.html file in any bro
 Wordled can now be played online at [wordled.online](https://wordled.online)
 
 **Languages used**
+
 Javascript, CSS, HTML
 
 **Screenshots**
