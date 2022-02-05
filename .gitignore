@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# System generated files
+*~
+.~lock.*
+*.swp
+
+# Local backups
+*.bak
