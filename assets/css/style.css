@@ -7,10 +7,6 @@ html, body{
 	font-family: arial;
 }
 
-a{
-	color: #337c33;
-}
-
 #container{
 	width: 100%;
 	max-width: 600px;
@@ -22,10 +18,9 @@ a{
 	border-right: 1px solid;
 }
 
-/*logo*/
 .logo{
 	text-align: center;
-	margin-top: 4px;
+	margin-top: 12px;
 	cursor:pointer;
 	text-shadow: 2px 3px 2px #000;
 	transition:.5s
@@ -54,44 +49,18 @@ a{
     background-color: #35a535;
 }
 
-/*nav bar*/
 .nav_bar{
 	text-align: center;
 	height: 33px;
 	margin-top: 11px;
 }
 
-.btn{
-	padding: 4px;
-	font-size: 19px;
-	background: transparent;
-	border: 0;
-	cursor: pointer;
-	border-bottom: 1px solid #dbdbdb;
-	transition: .5s;
-}
-
-.btn:hover{
-	opacity: .5;
-	border-bottom: 1px solid #000;
-}
-
 #giveUpBtn{
-	position: absolute;
-	margin-left: -37px;
+	padding: 5px 10px;
+	font-size: 17px;
+	cursor: pointer;
 }
 
-#levelSelectBtn{
-	position: absolute;
-	margin-left: 77px;
-}
-
-#difficultySelectBtn{
-	position: absolute;
-    margin-left: -162px;
-}
-
-/*game*/
 .game_area{
 	margin-top:5px;
 }
@@ -108,10 +77,8 @@ a{
     width: 56px;
     height: 51px;
 	border-radius: 12px;
-	transition: transform 1.6s;
 }
 
-/*notification*/
 #notification{
 	font-family: arial;
 	text-align: center;
@@ -122,7 +89,6 @@ a{
 	height: 22px;
 }
 
-/* keyboard */
 #keyboard{
 	text-align:center;
 	margin-top: 5px;
@@ -158,243 +124,17 @@ a{
 }
 
 
-.blockGreen, .blockGrey, .blockGold{
-	color:#fff;
-	transform: rotateX(360deg);
-}
-
 .blockGreen{
 	background-color: #35a535;
+	color:#fff;
 }
 
 .blockGrey{
 	background-color: #737373;
+	color:#fff;
 }
 
 .blockGold{
 	background-color: #d7bf4a;
-}
-
-/*modal*/
-#shadowBack{
-	position: absolute;
-	left: 0;
-	background: #000;
-	opacity: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 10;
-	transition: .5s;
-}
-
-#modal{
-	position: absolute;
-	top: 100px;
-	width: 350px;
-	background: #fff;
-	opacity: 0;
-	left: calc(50% - 175px);
-	z-index: 11;
-	transition: .5s;
-}
-
-#modalClose{
-	position: absolute;
-	margin-top: -42px;
-	margin-left: 277px;
-	font-size: 21px;
-	cursor: pointer;
-	padding: 5px 10px;
-}
-
-.modalBtn, .modalBtnL{
-	width: 100%;
-	font-size: 28px;
-	cursor: pointer;
-}
-
-.modalBtn, .modalBtnL{
-	padding: 23.5px;
-}
-
-.modalBtnL{
-	padding: 87.5px;
-}
-
-.modalMessage{
-	display: block;
-	font-size: 22px;
-	text-align: center;
-	margin-top: 11px;
-	line-height: 32px;
-	letter-spacing: .5px;
-}
-
-.msBlock{
-	display: inline-block;
-	text-align: center;
-    margin-top: 54px;
-	width: 49%;
-}
-
-.msHead{
-	display:block;
-	font-size: 20px;
-}
-
-.msBody{
-	display:block;
-	font-size: 60px;
-}
-
-.scoreType{
-	display: inline-block;
-	width:50%;
-	text-align: center;
-    padding: 10px 0;
-}
-
-.scoreBtn, .scoreBtnActive{
-	width: 25%;
-	padding: 13px 0;
-	cursor: pointer;
-	transition:.5s;
-}
-
-.helpBtn, .helpBtnActive{
-	width: 50%;
-	padding: 13px 0;
-	cursor: pointer;
-	transition:.5s;
-}
-
-.scoreBtnActive, .helpBtnActive{
-	background:#737373;
 	color:#fff;
-}
-
-#mhBlock{
-	padding: 8px;
-	font-size: 15px;
-}
-
-.mhbHead{
-	padding-bottom: 10px;
-	border-bottom: 1px solid #bbbbbb;
-}
-
-.mhbBody{
-	text-align: center;
-}
-
-.exampleRow{
-	padding: 4px;
-}
-
-.exampleTile{
-	font-size: 21px;
-	padding: 5px;
-	border: 3px solid #737373;
-	width: 28px;
-	margin: 3px;
-	display: inline-block;
-}
-
-/* menu */
-#menu{
-	position: relative;
-	top:7px;
-}
-
-.menuBtn{
-	width:100%;
-	padding: calc(6vh - 12px);
-	font-size: 35px;
-	cursor: pointer;
-}
-
-@media only screen and (max-width: 800px) {
-	.game_area{
-		margin-top: 1px;
-		
-	}
-	.row, .row_block{
-		margin: 2px;
-	}
-	.row_block {
-		font-size: 40px;
-		width: 45px;
-		height: 44px;
-	}
-	#notification, .nav_bar{
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-}
-
-@media only screen and (max-width: 320px) {
-	.game_area{
-		margin-top: 1px;
-		
-	}
-	.row, .row_block{
-		margin: 2px;
-	}
-	.row_block {
-		font-size: 28px;
-		width: 30px;
-		height: 30px;
-	}
-	.logo_green, .logo_gold {
-		font-size: 21px;
-		width: 32px;
-		height: 27px;
-	}
-	.btn{
-		font-size:15px;
-	}
-	#difficultySelectBtn{
-		margin-left:-131px;
-	}
-	#levelSelectBtn{
-		margin-left:57px;
-	}
-	#modal{
-		width:300px;
-		left:calc(50% - 150px);
-	}
-	#notification {
-		height:15px;
-		font-size:17px;
-	}
-	.nav_bar{
-		margin-bottom:6px;
-	}
-	#modalClose {
-		margin-left: 215px;
-	}
-	.modalBtnL, .modalBtn{
-		padding:6vh;
-	}
-	.msBlock {
-		margin-top: 22px;
-		margin-bottom: 10px;
-	}
-	.msHead {
-		font-size: 13px;
-	}
-	.msBody {
-		font-size: 36px;
-	}
-	.mhbHead {
-		font-size: 12px;
-	}
-	.helpBtn, .helpBtnActive {
-		padding: 7px 0;
-	}
-	.exampleTile {
-		font-size: 15px;
-		padding: 4px;
-		width: 21px;
-	}
 }
