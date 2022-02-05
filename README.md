@@ -19,4 +19,4 @@ over 12,000 words in assets/js/words.js. This will make winning very difficult.
 Wordled can be played in your browser. Simply open the index.html file in
 any browser to play.
 
-![Wordled demonstration](https://res.cloudinary.com/practicaldev/image/fetch/s--237ONCoC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uo600vi9hsj8o52a80pl.png)
+![Wordled Game Board](screenshots/gameBoard.png)
