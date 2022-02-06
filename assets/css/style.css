@@ -20,11 +20,10 @@ html, body{
 
 .logo{
 	text-align: center;
-	margin-top: 12px;
+	margin-top: 20px;
 	cursor:pointer;
 	text-shadow: 2px 3px 2px #000;
 	transition:.5s
-	font-family: fantasy;
 }
 
 .logo:hover{
@@ -32,9 +31,9 @@ html, body{
 }
 
 .logo_green, .logo_gold{
-    font-size: 26px;
+    font-size: 30px;
 	color: #fff;
-	width: 49px;
+	width: 45px;
 	height: 35px;
 	border-radius: 12px;
 	margin: 3px;
