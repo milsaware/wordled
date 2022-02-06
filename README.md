@@ -6,7 +6,7 @@ play as often as you like, not just once per day. There is no social media
 posting or score keeping, just fun and Wordle skill building.
 
 I started with code from @ozboware, who since added a lot of features. You can
-play his version online at [wordled.online](wordled.online).
+play his version online at [wordled.online](https://wordled.online).
 
 There are five word lists of increasing difficulty in the directory
 [assets/js](assets/js). The default is level2.js which contains over 1000 common
