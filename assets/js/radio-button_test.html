@@ -9,7 +9,7 @@
 
 <body>
     <p>Select a difficulty level:</p>
-    <div id="group">
+    <div id="levelSelector">
     </div>
 
     <p id="output"></p>
@@ -24,8 +24,8 @@
         ];
         
         // generate the radio groups
-        const group = document.querySelector('#group');
-        group.innerHTML = levels
+        const levelSelector = document.querySelector('#levelSelector');
+        levelSelector.innerHTML = levels
             .map(
                 item => `<div>
                         <input type="radio" name="level" value="${item.value}" id="${item.value}">
