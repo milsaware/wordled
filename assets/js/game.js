@@ -4,9 +4,8 @@ The detailed explanation of how it was built is available at:
 https://ozboware.co.uk/one-way-to-make-a-wordle-type-game-using-javascript
 */
 
-// formatted with: prettier-eslint --tab-width 4 --print-width 90
+// formatted with: prettier-eslint --tab-width 4 --print-width 95 --write game.js
 
-let answers = level2;
 let currentRow = 0;
 let nextRowBlock = 0;
 let score = 0;
@@ -50,8 +49,6 @@ function gameStart() {
     nextRowBlock = 0;
     score = 0;
     remNotification = 0;
-    let rand = Math.floor(Math.random() * answers.length);
-    chosenWord = answers[rand].toUpperCase();
 
     let logo = document.createElement('div');
     logo.className = 'logo';
@@ -66,6 +63,18 @@ function gameStart() {
     }
 
     container.append(logo);
+
+    const difficultyLevels = [
+        { value: 'level1', label: '<b>Level 1:</b> 100 words suitable for young children' },
+        { value: 'level2', label: '<b>Level 2:</b> over 1000 common words' },
+        { value: 'level3', label: '<b>Level 3:</b> over 2500 words' },
+        { value: 'level4', label: '<b>Level 4:</b> over 3400 words' },
+        { value: 'level5', label: '<b>Level 5:</b> over 13,000 words' },
+    ];
+
+    let answers = level2;
+    let rand = Math.floor(Math.random() * answers.length);
+    chosenWord = answers[rand].toUpperCase();
 
     let navBar = document.createElement('div');
     navBar.className = 'nav_bar';
@@ -158,10 +167,7 @@ function gameStart() {
                 let wordRow = document.getElementsByClassName('row')[currentRow];
                 let rowBlockEl = wordRow.childNodes;
                 for (i = 0; i < alphabet.length; i++) {
-                    if (
-                        event.key === alphabet[i] ||
-                        event.key === alphabet[i].toUpperCase()
-                    ) {
+                    if (event.key === alphabet[i] || event.key === alphabet[i].toUpperCase()) {
                         addLetter(rowBlockEl, alphabet[i]);
                     }
                 }
@@ -204,11 +210,9 @@ function submitWord(wordRow, keyPress) {
                             for (j = 0; j < wordRow.childNodes.length; j++) {
                                 if (
                                     wordRow.childNodes[j].innerText == letter &&
-                                    wordRow.childNodes[j].className ==
-                                        'row_block  blockGold'
+                                    wordRow.childNodes[j].className == 'row_block  blockGold'
                                 ) {
-                                    wordRow.childNodes[j].className =
-                                        'row_block  blockGrey';
+                                    wordRow.childNodes[j].className = 'row_block  blockGrey';
                                     let index = answer.indexOf(letter);
                                     if (index !== -1) {
                                         answer.splice(index, 1);
@@ -217,9 +221,7 @@ function submitWord(wordRow, keyPress) {
                             }
                         }
                     } else {
-                        if (
-                            countOccurrences(answer, letter) <= count(chosenWord, letter)
-                        ) {
+                        if (countOccurrences(answer, letter) <= count(chosenWord, letter)) {
                             blockClass = ' blockGold';
                         } else {
                             blockClass = ' blockGrey';
@@ -240,9 +242,7 @@ function submitWord(wordRow, keyPress) {
                 gameOver();
             } else if (currentRow == 5) {
                 notification.innerText =
-                    'You lost. The word was ' +
-                    chosenWord +
-                    '. Press Enter to play again';
+                    'You lost. The word was ' + chosenWord + '. Press Enter to play again';
                 gameOver();
             } else {
                 score = 0;
