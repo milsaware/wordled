@@ -94,21 +94,6 @@ function gameStart() {
     let rand = Math.floor(Math.random() * answers.length);
     chosenWord = answers[rand].toUpperCase();
 
-    let navBar = document.createElement('div');
-    navBar.className = 'nav_bar';
-    let giveUpBtn = document.createElement('button');
-    giveUpBtn.id = 'giveUpBtn';
-    giveUpBtn.innerText = 'Give up';
-    giveUpBtn.addEventListener('click', function quitClick(event) {
-        if (gameFin == 0) {
-            notification.innerText =
-                'The word was ' + chosenWord + '. Press Enter to play again';
-            gameOver();
-        }
-    });
-    navBar.append(giveUpBtn);
-    container.append(navBar);
-
     let gameArea = document.createElement('div');
     gameArea.className = 'game_area';
     for (i = 0; i < 6; i++) {
@@ -176,6 +161,21 @@ function gameStart() {
     keyboard.append(botKeys);
 
     container.append(keyboard);
+
+    let navBar = document.createElement('div');
+    navBar.className = 'nav_bar';
+    let giveUpBtn = document.createElement('button');
+    giveUpBtn.id = 'giveUpBtn';
+    giveUpBtn.innerText = 'Give up';
+    giveUpBtn.addEventListener('click', function quitClick(event) {
+        if (gameFin == 0) {
+            notification.innerText =
+                'The word was ' + chosenWord + '. Press Enter to play again';
+            gameOver();
+        }
+    });
+    navBar.append(giveUpBtn);
+    container.append(navBar);
 
     let alphabet = 'abcdefghijklmnopqrstuvwxyz';
     document.addEventListener(
