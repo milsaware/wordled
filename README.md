@@ -11,7 +11,7 @@ play his version online at [wordled.online](https://wordled.online).
 There are five word lists of increasing difficulty in the file
 [assets/js/answers.js](assets/js/answers.js). The default is level2 which
 contains over 1000 common words. The simplest, level1, is a list of 100 words
-suitable for younger users with a limited vocabulary. Level5 contains over
+suitable for young children with a limited vocabulary. Level5 contains over
 13,000 words and is extremely difficult. You can even add your own list by
 following the instructions in index.html.
 
