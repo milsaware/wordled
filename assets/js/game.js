@@ -94,10 +94,11 @@ function gameStart() {
     // add an event listener for the change event
     const radioButtons = document.querySelectorAll('input[name="difficultyLevel"]');
     for (const radioButton of radioButtons) {
-        radioButton.addEventListener('change', showSelected);
+        radioButton.addEventListener('change', changeLevel);
     }
-    function showSelected() {
-        if (this.checked) { notification.innerText = `You selected ${this.value}`;
+    function changeLevel() {
+      let answers = this.value;
+        if (this.checked) { notification.innerText = `You selected ${answers}`;
         }
     }
 
