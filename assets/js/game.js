@@ -340,7 +340,7 @@ function startMenu(){
 	}
 	let script = document.createElement('script');
 	script.id = 'wordscript';
-	script.src = '/assets/js/wordlists/' + maxBlock + '.js';
+	script.src = '/assets/js/words/' + maxBlock + '.js';
 	document.body.prepend(script);
 	setGlobal();
 	container.innerHTML = '';
