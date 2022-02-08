@@ -67,7 +67,7 @@ function gameStart() {
     let selectDifficulty = document.createElement('div');
     selectDifficulty.className = 'levelHeader';
     selectDifficulty.id = 'selectDifficulty';
-    selectDifficulty.innerText = 'Select a difficulty level:';
+    selectDifficulty.innerText = 'First, select a difficulty level:';
     container.append(selectDifficulty);
 
     const difficultyLevels = [

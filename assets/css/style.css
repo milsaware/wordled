@@ -52,6 +52,7 @@ body {
 
 .levelHeader {
     font-size: 19px;
+    font-style: italic;
     margin-top: 11px;
     margin-left: 25%;
 }
