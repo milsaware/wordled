@@ -48,6 +48,18 @@ html, body{
     background-color: #35a535;
 }
 
+.levelHeader {
+    font-size: 19px;
+    margin-top: 11px;
+    margin-left: 25%;
+}
+
+.levelSelector {
+    font-size: 17px;
+	margin-top: 5px;
+    margin-left: 25%;
+}
+
 .nav_bar{
 	text-align: center;
 	height: 33px;

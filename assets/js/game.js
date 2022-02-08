@@ -64,6 +64,12 @@ function gameStart() {
 
     container.append(logo);
 
+    let selectDifficulty = document.createElement('div');
+    selectDifficulty.className = 'levelHeader';
+    selectDifficulty.id = 'selectDifficulty';
+    selectDifficulty.innerText = 'Select a difficulty level:';
+    container.append(selectDifficulty);
+
     const difficultyLevels = [
         { value: 'level1', label: '<b>Level 1:</b> 100 words suitable for young children' },
         { value: 'level2', label: '<b>Level 2:</b> over 1000 common words' },
@@ -71,6 +77,18 @@ function gameStart() {
         { value: 'level4', label: '<b>Level 4:</b> over 3400 words' },
         { value: 'level5', label: '<b>Level 5:</b> over 13,000 words' },
     ];
+    let levelSelector = document.createElement('div');
+    levelSelector.className = 'levelSelector';
+    // generate the radio buttons
+    levelSelector.innerHTML = difficultyLevels
+        .map(
+            item => `<div>
+                        <input type="radio" name="difficultyLevel" value="${item.value}"
+                        id="${item.value}"> <label for="${item.value}">${item.label}</label>
+                    </div>`
+        )
+        .join(' ');
+    container.append(levelSelector);
 
     let answers = level2;
     let rand = Math.floor(Math.random() * answers.length);
