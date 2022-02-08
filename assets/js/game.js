@@ -91,6 +91,15 @@ function gameStart() {
     container.append(levelSelector);
     // Set level2 as default
     document.querySelector('#level2').checked = true;
+    // add an event listener for the change event
+    const radioButtons = document.querySelectorAll('input[name="difficultyLevel"]');
+    for (const radioButton of radioButtons) {
+        radioButton.addEventListener('change', showSelected);
+    }
+    function showSelected() {
+        if (this.checked) { notification.innerText = `You selected ${this.value}`;
+        }
+    }
 
     let answers = level2;
     let rand = Math.floor(Math.random() * answers.length);
