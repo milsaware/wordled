@@ -67,7 +67,7 @@ function gameStart() {
     let selectDifficulty = document.createElement('div');
     selectDifficulty.className = 'levelHeader';
     selectDifficulty.id = 'selectDifficulty';
-    selectDifficulty.innerText = 'First, select a difficulty level:';
+    selectDifficulty.innerText = 'Select a difficulty level:';
     container.append(selectDifficulty);
 
     const difficultyLevels = [
@@ -89,6 +89,8 @@ function gameStart() {
         )
         .join(' ');
     container.append(levelSelector);
+    // Set level2 as default
+    document.querySelector('#level2').checked = true;
 
     let answers = level2;
     let rand = Math.floor(Math.random() * answers.length);
