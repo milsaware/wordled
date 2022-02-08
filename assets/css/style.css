@@ -233,7 +233,7 @@ a{
 .msBlock{
 	display: inline-block;
 	text-align: center;
-    margin-top: 54px;
+    margin-top: 17px;
 	width: 49%;
 }
 
@@ -300,6 +300,18 @@ a{
 	display: inline-block;
 }
 
+/* social */
+.socialNav{
+	height: 42px;
+	text-align: center;
+}
+
+.modalSocialIcon{
+	width: 35px;
+	margin: 7px;
+	cursor: pointer;
+}
+
 /* menu */
 #menu{
 	position: relative;
@@ -308,7 +320,7 @@ a{
 
 .menuBtn{
 	width:100%;
-	padding: calc(6vh - 12px);
+	padding: calc(6vh - 30px);
 	font-size: 35px;
 	cursor: pointer;
 }
@@ -332,7 +344,7 @@ a{
 	}
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 415px) {
 	.game_area{
 		margin-top: 1px;
 		
@@ -396,5 +408,8 @@ a{
 		font-size: 15px;
 		padding: 4px;
 		width: 21px;
+	}
+	.socialNav{
+		display:none;
 	}
 }
