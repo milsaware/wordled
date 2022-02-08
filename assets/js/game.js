@@ -1,9 +1,14 @@
+let beginner;
+let intermediate;
+let advanced;
+let fullList;
 let currentRow = 0;
 let nextRowBlock = 0;
 let score = 0;
 let remNotification = 0;
 let gameFin = 0;
 let gameOn = 0;
+let maxBlock = 5;
 let level = 'beginner';
 let difficulty = 'easy';
 let mustUse = '';
@@ -111,6 +116,18 @@ function openModal(type, notification){
 			modal.append(modalBtn);
 		}
 	}
+	else if(type == 'charSelect'){
+		for(i = 0; i < 2; i++){
+			let modalBtn = document.createElement('button');
+			modalBtn.className = 'modalBtnL';
+			modalBtn.innerText = (i == 0)? '3 letters' : '5 letters';
+			modalBtn.addEventListener('click', charSelect);
+			modal.append(modalBtn);
+			setTimeout(function(){
+				modal.style.cssText = 'opacity: 1';
+			}, 1);
+		}
+	}
 	else if(type == 'difficultySelect'){
 		for(i = 0; i < 2; i++){
 			let modalBtn = document.createElement('button');
@@ -128,6 +145,8 @@ function openModal(type, notification){
 		message.className = 'modalMessage';
 		message.innerHTML = notification;
 		modal.append(message);
+
+		addSocial(modal);
 
 		for(i = 0; i < 4; i++){
 			let modalScoreBlock = document.createElement('div');
@@ -203,6 +222,57 @@ function openModal(type, notification){
 	modal.prepend(modalClose);
 }
 
+function addSocial(loc){
+	let socialNav = document.createElement('div');
+	socialNav.className = 'socialNav';
+
+	let telegramIcon = document.createElement('img');
+	telegramIcon.className = 'modalSocialIcon';
+	telegramIcon.src = '/assets/img/social/telegram_icon.png';
+	telegramIcon.title = 'Share on Telegram';
+	telegramIcon.alt = 'Telegram';
+	telegramIcon.addEventListener("click", function(){
+		openWindow('https://t.me/share/url?url=https://wordled.online&text=I\'ve been playing Wordled and love it. You have 6 tries to guess the hidden word and beat your high score. There are multiple difficulty settings to keep things interesting and it\'s free to play.', 'Telegram');
+	});
+	socialNav.append(telegramIcon);
+
+	let twitterIcon = document.createElement('img');
+	twitterIcon.className = 'modalSocialIcon';
+	twitterIcon.src = '/assets/img/social/twitter_icon.png';
+	twitterIcon.title = 'Share on Twitter';
+	twitterIcon.alt = 'Twitter';
+	twitterIcon.addEventListener("click", function(){
+		openWindow('https://twitter.com/intent/tweet?text=I%27ve%20been%20playing%20%23Wordled%20and%20love%20it.%20You%20have%206%20tries%20to%20guess%20the%20hidden%20word%20and%20beat%20your%20high%20score.%20There%20are%20multiple%20difficulty%20settings%20to%20keep%20things%20interesting%20and%20it%27s%20free%20to%20play.&url=https%3A%2F%2Fwordled.online&via=wordled', 'Twitter');
+	});
+	socialNav.append(twitterIcon);
+
+	let facebookIcon = document.createElement('img');
+	facebookIcon.className = 'modalSocialIcon';
+	facebookIcon.src = '/assets/img/social/facebook_icon.png';
+	facebookIcon.title = 'Share on FaceBook';
+	facebookIcon.alt = 'FaceBook';
+	facebookIcon.addEventListener("click", function(){
+		openWindow('https://www.facebook.com/sharer.php?u=https://wordled.online', 'FaceBook');
+	});
+	socialNav.append(facebookIcon);
+
+	let redditIcon = document.createElement('img');
+	redditIcon.className = 'modalSocialIcon';
+	redditIcon.src = '/assets/img/social/reddit_icon.png';
+	redditIcon.title = 'Share on Reddit';
+	redditIcon.alt = 'Reddit';
+	redditIcon.addEventListener("click", function(){
+		openWindow('https://www.reddit.com/submit?url=https://wordled.online&title=Play%20Wordled%20Online%20-%20a%20free%20word%20game', 'Reddit');
+	});
+	socialNav.append(redditIcon);
+
+	loc.append(socialNav);
+}
+
+function openWindow(url, windowName){
+	window.open(url, windowName,'width=550,height=450,left=150,top=200,toolbar=0,status=0,data-action=share/whatsapp/share')
+}
+
 function addLogo(){
 	let logo = document.createElement('div');
 	logo.className = 'logo';
@@ -265,16 +335,23 @@ function setGlobal(){
 }
 
 function startMenu(){
+	if(document.getElementById('wordscript') != null){
+		document.getElementById('wordscript').remove();
+	}
+	let script = document.createElement('script');
+	script.id = 'wordscript';
+	script.src = '/assets/js/wordlists/' + maxBlock + '.js';
+	document.body.prepend(script);
 	setGlobal();
 	container.innerHTML = '';
 	addLogo();
 	let menu = document.createElement('div');
 	menu.id = 'menu';
-	for(i = 0; i < 5; i++){
+	for(i = 0; i < 6; i++){
 		let j = i;
 		let menuBtn = document.createElement('button');
 		menuBtn.className = 'menuBtn';
-		menuBtn.innerText = (i == 0)? level : ((i == 1)? difficulty : ((i == 2)? 'high scores' : ((i == 3)? 'help' : 'start game')));
+		menuBtn.innerText = (i == 0)? maxBlock + ' letters' : ((i == 1)? level : ((i == 2)? difficulty : ((i == 3)? 'high scores' : ((i == 4)? 'help' : 'start game'))));
 		menuBtn.j = i;
 
 		menuBtn.addEventListener("click", menuClick);
@@ -335,7 +412,7 @@ function gameStart(){
 	for(i = 0; i < 6; i++){
 		let row = document.createElement('div');
 		row.className = 'row';
-		for(j = 0; j < 5; j++){
+		for(j = 0; j < maxBlock; j++){
 			let rowBlock = document.createElement('div');
 			rowBlock.className = 'row_block';
 			row.append(rowBlock);
@@ -384,6 +461,8 @@ function gameStart(){
 		keyboard.append(botKeys);
 
 	container.append(keyboard);
+	
+	addSocial(container);
 
 	document.addEventListener('keyup', keyPress);
 }
@@ -435,8 +514,8 @@ function enterClick(){
 
 function menuClick(event) {
 	let j = event.currentTarget.j;
-	let modalType = (j == 0)? 'levelSelect' : ((j == 1)? 'difficultySelect' : ((j == 2)? 'highScores' : 'help'));
-	if(j < 4){
+	let modalType = (j == 0)? 'charSelect' : ((j == 1)? 'levelSelect' : ((j == 2)? 'difficultySelect' : ((j == 3)? 'highScores' : 'help')));
+	if(j < 5){
 		openModal(modalType);
 	}else{
 		gameOn = 1;
@@ -460,6 +539,18 @@ function restartClick(){
 
 function difficultySelect(){
 	difficulty = this.innerText.toLowerCase();
+	if(gameOn == 1){
+		userScore = 0;
+		currentStreak = 0;
+		gameOver();
+		document.removeEventListener('keyup', restart, false);
+		gameStart();
+	}else{
+		startMenu();
+	}
+}
+function charSelect(){
+	maxBlock = parseInt(this.innerText.replace(/\D/g, ''));
 	if(gameOn == 1){
 		userScore = 0;
 		currentStreak = 0;
@@ -581,7 +672,7 @@ function checkAnswer(wordRow, answer){
 		}
 	}
 
-	if(score === 5){
+	if(score === maxBlock){
 		let scoreLevel = (level == 'beginner')? 1 : ((level == 'intermediate')? 2 : ((level == 'advanced')? 3 : 4));
 		userScore = userScore + ((scoreLevel * 10) - ((scoreLevel + 1) * currentRow));
 
@@ -620,7 +711,7 @@ function checkAnswer(wordRow, answer){
 }
 
 function submitWord(wordRow){
-	if(nextRowBlock > 0 && nextRowBlock % 5 == 0){
+	if(nextRowBlock > 0 && nextRowBlock % maxBlock == 0){
 		let answer = wordRow.innerText.replace(/[\n\r]/g, '');
 		if(fullList.includes(answer)){
 			if(difficulty == 'difficult'){
@@ -639,7 +730,7 @@ function submitWord(wordRow){
 		}
 	}else{
 		remNotification = 0;
-		document.getElementById('notification').innerText = 'You must enter 5 characters';
+		document.getElementById('notification').innerText = 'You must enter ' + maxBlock + ' characters';
 	}
 }
 
@@ -660,7 +751,7 @@ function addLetter(rowBlockEl, letter){
 		remNotification = 1;
 		document.getElementById('notification').innerText = '';
 	}
-	if(nextRowBlock < 5){
+	if(nextRowBlock < maxBlock){
 		rowBlockEl[nextRowBlock].innerText = letter.toUpperCase();
 		nextRowBlock++;
 	}
