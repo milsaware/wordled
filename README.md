@@ -13,7 +13,8 @@ There are five word lists of increasing difficulty in the file
 contains over 1000 common words. The simplest, level1, is a list of 100 words
 suitable for young children with a limited vocabulary. Level5 contains over
 13,000 words and is extremely difficult. You can even add your own list by
-following the instructions in index.html.
+following the "add a difficulty level" instructions in
+[assets/js/game.js](assets/js/game.js)
 
 **No installation required**
 

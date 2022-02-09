@@ -70,6 +70,8 @@ function gameStart() {
     selectDifficulty.innerText = 'Select a difficulty level:';
     container.append(selectDifficulty);
 
+    /* --- Beginning of difficultyLevel section --- */
+    // If you add a difficulty level, add it to this const
     const difficultyLevels = [
         { value: 'level1', label: '<b>Level 1:</b> 100 words for young children' },
         { value: 'level2', label: '<b>Level 2:</b> over 1000 common words' },
@@ -98,6 +100,7 @@ function gameStart() {
     for (const radioButton of radioButtons) {
         radioButton.addEventListener('change', changeLevel);
     }
+    // If you add a difficulty level, add it to this function
     function changeLevel() {
         if (this.checked) {
             notification.innerText = `You selected changeLevel ${this.value}`;
@@ -123,6 +126,7 @@ function gameStart() {
             }
         }
     }
+    /* --- End of difficultyLevel section --- */
 
     let gameArea = document.createElement('div');
     gameArea.className = 'game_area';
