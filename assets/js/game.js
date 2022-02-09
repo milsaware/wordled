@@ -326,11 +326,12 @@ function addKeys(el, layout, keyClass) {
 }
 
 function addLetter(rowBlockEl, letter) {
-    document.getElementById('level1').disabled = true;
-    document.getElementById('level2').disabled = true;
-    document.getElementById('level3').disabled = true;
-    document.getElementById('level4').disabled = true;
-    document.getElementById('level5').disabled = true;
+    // Disable difficultyLevel radio buttons once a letter is typed
+    const unusedButtons = document.querySelectorAll('input[name="difficultyLevel"]');
+    for (const unusedButton of unusedButtons) {
+        unusedButton.disabled = true;
+        // unusedButton.removeEventListener('change', changeLevel, false);
+    }
     if (remNotification == 0) {
         remNotification = 1;
         notification.innerText = '';
