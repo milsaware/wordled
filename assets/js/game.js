@@ -326,6 +326,11 @@ function addKeys(el, layout, keyClass) {
 }
 
 function addLetter(rowBlockEl, letter) {
+    document.getElementById('level1').disabled = true;
+    document.getElementById('level2').disabled = true;
+    document.getElementById('level3').disabled = true;
+    document.getElementById('level4').disabled = true;
+    document.getElementById('level5').disabled = true;
     if (remNotification == 0) {
         remNotification = 1;
         notification.innerText = '';
