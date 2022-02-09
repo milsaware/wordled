@@ -91,20 +91,38 @@ function gameStart() {
     container.append(levelSelector);
     // Set level2 as default
     document.querySelector('#level2').checked = true;
+    let rand = Math.floor(Math.random() * level2.length);
+    chosenWord = level2[rand].toUpperCase();
     // add an event listener for the change event
     const radioButtons = document.querySelectorAll('input[name="difficultyLevel"]');
     for (const radioButton of radioButtons) {
         radioButton.addEventListener('change', changeLevel);
     }
     function changeLevel() {
-      let answers = this.value;
-        if (this.checked) { notification.innerText = `You selected ${answers}`;
+        if (this.checked) {
+            notification.innerText = `You selected changeLevel ${this.value}`;
+            if (this.value === 'level1') {
+                let rand = Math.floor(Math.random() * level1.length);
+                chosenWord = level1[rand].toUpperCase();
+            }
+            if (this.value === 'level2') {
+                let rand = Math.floor(Math.random() * level2.length);
+                chosenWord = level2[rand].toUpperCase();
+            }
+            if (this.value === 'level3') {
+                let rand = Math.floor(Math.random() * level3.length);
+                chosenWord = level3[rand].toUpperCase();
+            }
+            if (this.value === 'level4') {
+                let rand = Math.floor(Math.random() * level4.length);
+                chosenWord = level4[rand].toUpperCase();
+            }
+            if (this.value === 'level5') {
+                let rand = Math.floor(Math.random() * wordlist.length);
+                chosenWord = wordlist[rand].toUpperCase();
+            }
         }
     }
-
-    let answers = level2;
-    let rand = Math.floor(Math.random() * answers.length);
-    chosenWord = answers[rand].toUpperCase();
 
     let gameArea = document.createElement('div');
     gameArea.className = 'game_area';
