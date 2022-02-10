@@ -234,6 +234,7 @@ function gameStart() {
                 for (i = 0; i < alphabet.length; i++) {
                     if (event.key === alphabet[i] || event.key === alphabet[i].toUpperCase()) {
                         addLetter(rowBlockEl, alphabet[i]);
+                        disableLevelChanges();
                     }
                 }
                 if (event.key === 'Enter') {
