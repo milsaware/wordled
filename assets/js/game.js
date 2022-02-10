@@ -126,6 +126,14 @@ function gameStart() {
             }
         }
     }
+
+    // Used to disable radio buttons once game play starts
+    function disableLevelChanges() {
+        for (const radioButton of radioButtons) {
+            radioButton.disabled = true;
+        }
+    }
+
     /* --- End of difficultyLevel section --- */
 
     let gameArea = document.createElement('div');
@@ -330,12 +338,6 @@ function addKeys(el, layout, keyClass) {
 }
 
 function addLetter(rowBlockEl, letter) {
-    // Disable difficultyLevel radio buttons once a letter is typed
-    const unusedButtons = document.querySelectorAll('input[name="difficultyLevel"]');
-    for (const unusedButton of unusedButtons) {
-        unusedButton.disabled = true;
-        // unusedButton.removeEventListener('change', changeLevel, false);
-    }
     if (remNotification == 0) {
         remNotification = 1;
         notification.innerText = '';
