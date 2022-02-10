@@ -105,7 +105,6 @@ function gameStart() {
     // If you add a difficulty level, add it to this function
     function changeLevel() {
         if (this.checked) {
-            notification.innerText = `You selected changeLevel ${this.value}`;
             if (this.value === 'level1') {
                 let rand = Math.floor(Math.random() * level1.length);
                 chosenWord = level1[rand].toUpperCase();
