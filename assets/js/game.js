@@ -130,10 +130,12 @@ function gameStart() {
     }
 
     // Used to disable radio buttons once game play starts
+    // This function only needs to run once, so remove the listener
     function disableLevelChanges() {
         for (const radioButton of radioButtons) {
             radioButton.disabled = true;
         }
+        keyboard.removeEventListener('click', disableLevelChanges);
     }
 
     /* --- End of difficultyLevel section --- */
@@ -205,6 +207,9 @@ function gameStart() {
     keyboard.append(botKeys);
 
     container.append(keyboard);
+
+    // Disable radio buttons once any game keyboard key is pressed
+    keyboard.addEventListener('click', disableLevelChanges);
 
     let navBar = document.createElement('div');
     navBar.className = 'nav_bar';
