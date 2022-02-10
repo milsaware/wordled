@@ -4,7 +4,7 @@ The detailed explanation of how it was built is available at:
 https://ozboware.co.uk/one-way-to-make-a-wordle-type-game-using-javascript
 */
 
-// formatted with: prettier-eslint --tab-width 4 --print-width 95 --write game.js
+// Formatted with: prettier-eslint --tab-width 4 --print-width 95 --write game.js
 
 let currentRow = 0;
 let nextRowBlock = 0;
@@ -81,7 +81,7 @@ function gameStart() {
     ];
     let levelSelector = document.createElement('div');
     levelSelector.className = 'levelSelector';
-    // generate the radio buttons
+    // Generate the radio buttons
     levelSelector.innerHTML = difficultyLevels
         .map(
             item => `<div>
@@ -91,15 +91,17 @@ function gameStart() {
         )
         .join(' ');
     container.append(levelSelector);
-    // Set level2 as default
+    // Default to level2 (so user isn't required to click a button before starting)
     document.querySelector('#level2').checked = true;
     let rand = Math.floor(Math.random() * level2.length);
     chosenWord = level2[rand].toUpperCase();
-    // add an event listener for the change event
+
+    // Add an event listener for the change difficulty event
     const radioButtons = document.querySelectorAll('input[name="difficultyLevel"]');
     for (const radioButton of radioButtons) {
         radioButton.addEventListener('change', changeLevel);
     }
+
     // If you add a difficulty level, add it to this function
     function changeLevel() {
         if (this.checked) {
