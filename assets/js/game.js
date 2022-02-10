@@ -91,7 +91,7 @@ function gameStart() {
         )
         .join(' ');
     container.append(levelSelector);
-    // Default to level2 (so user isn't required to click a button before starting)
+    // Default to level2 so user isn't required to click a button before starting
     document.querySelector('#level2').checked = true;
     let rand = Math.floor(Math.random() * level2.length);
     chosenWord = level2[rand].toUpperCase();
@@ -129,15 +129,14 @@ function gameStart() {
         }
     }
 
-    // Used to disable radio buttons once game play starts
-    // This function only needs to run once, so remove the listener
+    // Disable radio buttons once game play starts
     function disableLevelChanges() {
         for (const radioButton of radioButtons) {
             radioButton.disabled = true;
         }
+        // Once the radio buttons are disabled, remove the listener
         keyboard.removeEventListener('click', disableLevelChanges);
     }
-
     /* --- End of difficultyLevel section --- */
 
     let gameArea = document.createElement('div');
