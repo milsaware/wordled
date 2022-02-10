@@ -1,139 +1,158 @@
-html, body{
-	margin:0 auto;
-	padding:0;
-	width:100%;
-	height:100%;
-	overflow:hidden;
-	font-family: arial;
+html,
+body {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: arial;
 }
 
-#container{
-	width: 100%;
-	max-width: 600px;
-	margin: 0 auto;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	border-left: 1px solid;
-	border-right: 1px solid;
+#container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid;
+    border-right: 1px solid;
 }
 
-.logo{
-	text-align: center;
-	margin-top: 20px;
-	cursor:pointer;
-	text-shadow: 2px 3px 2px #000;
-	transition:.5s
+.logo {
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    text-shadow: 2px 3px 2px #000;
+    transition: 0.5s;
 }
 
-.logo:hover{
-	filter: brightness(1.125);
+.logo:hover {
+    filter: brightness(1.125);
 }
 
-.logo_green, .logo_gold{
+.logo_green,
+.logo_gold {
     font-size: 30px;
-	color: #fff;
-	width: 45px;
-	height: 35px;
-	border-radius: 12px;
-	margin: 3px;
-	display: inline-block;
+    color: #fff;
+    width: 45px;
+    height: 35px;
+    border-radius: 12px;
+    margin: 3px;
+    display: inline-block;
 }
 
-.logo_gold{
+.logo_gold {
     background-color: #d7bf4a;
 }
 
-.logo_green{
+.logo_green {
     background-color: #35a535;
 }
 
-.nav_bar{
-	text-align: center;
-	height: 33px;
-	margin-top: 11px;
+.levelHeader {
+    font-size: 19px;
+    font-style: italic;
+    margin-top: 11px;
+    margin-left: 25%;
 }
 
-#giveUpBtn{
-	padding: 5px 10px;
-	font-size: 17px;
-	cursor: pointer;
+.levelSelector {
+    font-size: 17px;
+    margin-top: 5px;
+    margin-left: 25%;
 }
 
-.game_area{
-	margin-top:5px;
+.nav_bar {
+    text-align: center;
+    height: 33px;
+    margin-top: 11px;
 }
 
-.row, .row_block{
-	display: flex;
-	justify-content: center;
-	margin: 5px;
+#giveUpBtn {
+    padding: 5px 10px;
+    font-size: 17px;
+    cursor: pointer;
 }
 
-.row_block{
-	font-size: 45px;
+.game_area {
+    margin-top: 5px;
+}
+
+.row,
+.row_block {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.row_block {
+    font-size: 45px;
     border: 1px solid;
     width: 56px;
     height: 51px;
-	border-radius: 12px;
+    border-radius: 12px;
 }
 
-#notification{
-	font-family: arial;
-	text-align: center;
-	letter-spacing: 1px;
-	font-size: 19px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	height: 22px;
+#notification {
+    font-family: arial;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 19px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 22px;
 }
 
-#keyboard{
-	text-align:center;
-	margin-top: 5px;
+#keyboard {
+    text-align: center;
+    margin-top: 5px;
 }
 
-#topKeys, #midKeys, #botKeys{
-	display: flex;
-	justify-content:center;
+#topKeys,
+#midKeys,
+#botKeys {
+    display: flex;
+    justify-content: center;
 }
 
-.keyboardKey_s, .keyboardKey_m, .keyboardKey_l{
-	background-color: #c5c5c5;
-	font-size: 30px;
-	height: 32px;
-	padding: 5px 0;
-	margin: 2.5px;
-	display: flex;
-	justify-content: center;
-	font-family: arial;
-	cursor: pointer;
+.keyboardKey_s,
+.keyboardKey_m,
+.keyboardKey_l {
+    background-color: #c5c5c5;
+    font-size: 30px;
+    height: 32px;
+    padding: 5px 0;
+    margin: 2.5px;
+    display: flex;
+    justify-content: center;
+    font-family: arial;
+    cursor: pointer;
 }
 
-.keyboardKey_s{
-	width: 52px;
+.keyboardKey_s {
+    width: 52px;
 }
 
-.keyboardKey_m{
-	width: 58px;
+.keyboardKey_m {
+    width: 58px;
 }
 
-.keyboardKey_l{
-	width: 81px;
+.keyboardKey_l {
+    width: 81px;
 }
 
-
-.blockGreen{
-	background-color: #35a535;
-	color:#fff;
+.blockGreen {
+    background-color: #35a535;
+    color: #fff;
 }
 
-.blockGrey{
-	background-color: #737373;
-	color:#fff;
+.blockGrey {
+    background-color: #737373;
+    color: #fff;
 }
 
-.blockGold{
-	background-color: #d7bf4a;
-	color:#fff;
+.blockGold {
+    background-color: #d7bf4a;
+    color: #fff;
 }
