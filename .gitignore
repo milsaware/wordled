@@ -8,6 +8,3 @@
 
 # Local backups
 *.bak
-
-# Used to hide testing or experiments
-/experiments
