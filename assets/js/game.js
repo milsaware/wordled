@@ -64,13 +64,13 @@ function gameStart() {
 
     container.append(logo);
 
+    /* --- Beginning of difficultyLevel section --- */
     let selectDifficulty = document.createElement('div');
     selectDifficulty.className = 'levelHeader';
     selectDifficulty.id = 'selectDifficulty';
     selectDifficulty.innerText = 'Select a difficulty level:';
     container.append(selectDifficulty);
 
-    /* --- Beginning of difficultyLevel section --- */
     // If you add a difficulty level, add it to this const
     const difficultyLevels = [
         { value: 'level1', label: '<b>Level 1:</b> 100 words for young children' },
@@ -103,6 +103,7 @@ function gameStart() {
     }
 
     // If you add a difficulty level, add it to this function
+    // Levels are defined in answers.js
     function changeLevel() {
         if (this.checked) {
             if (this.value === 'level1') {
@@ -206,7 +207,7 @@ function gameStart() {
 
     container.append(keyboard);
 
-    // Disable radio buttons once any game keyboard key is pressed
+    // Disable radio buttons once any on-screen keyboard key is pressed
     keyboard.addEventListener('click', disableLevelChanges);
 
     let navBar = document.createElement('div');
@@ -234,6 +235,7 @@ function gameStart() {
                 for (i = 0; i < alphabet.length; i++) {
                     if (event.key === alphabet[i] || event.key === alphabet[i].toUpperCase()) {
                         addLetter(rowBlockEl, alphabet[i]);
+                        // Disable radio buttons once any physical keyboard key is pressed`
                         disableLevelChanges();
                     }
                 }
