@@ -662,8 +662,15 @@ function checkAnswer(wordRow, answer){
 		wordRow.childNodes[i].className = 'row_block ' + blockClass;
 		let keyboard = document.getElementById('keyboard_' + letter);
 		if(chosenWord.toUpperCase().includes(letter)){
-			if(!keyboard.className.includes('blockGreen')){
-				keyboard.className += ' blockGreen';
+			if(letter == chosenWord[i]){
+				if(!keyboard.className.includes('blockGreen')){
+					keyboard.classList.remove('blockGold');
+					keyboard.className += ' blockGreen';
+				}
+			}else{
+				if(!keyboard.className.includes('blockGreen') && !keyboard.className.includes('blockGold')){
+					keyboard.className += ' blockGold';
+				}
 			}
 			if(count(answer, letter) > count(mustUse, letter) && count(mustUse, letter) <= count(chosenWord, letter)){
 				mustUse += letter;
