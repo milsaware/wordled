@@ -310,7 +310,7 @@ function submitWord(wordRow, keyPress) {
                 } else if (chosenWord.toUpperCase().includes(letter)) {
                     keyboard.className = keyType + ' blockGold';
                 } else {
-                    keyboard.className = keyType + ' blockGray';
+                    keyboard.className = keyType + ' blockGrey';
                 }
             }
 
