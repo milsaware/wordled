@@ -298,10 +298,11 @@ function submitWord(wordRow, keyPress) {
                 }
                 wordRow.childNodes[i].className = 'row_block ' + blockClass;
                 let keyboard = document.getElementById('keyboard_' + letter);
+                let keyType = keyboard.className.split(' ', 1)[0];
                 if (chosenWord.toUpperCase().includes(letter)) {
-                    keyboard.className += ' blockGreen';
+                    keyboard.className = keyType + ' blockGreen';
                 } else {
-                    keyboard.className += ' blockGrey';
+                    keyboard.className = keyType + ' blockGray';
                 }
             }
 
