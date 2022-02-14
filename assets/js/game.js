@@ -307,7 +307,7 @@ function submitWord(wordRow, keyPress) {
                 // Make sure keyboard.class doesn't get two colors
                 if (greenLetters.includes(letter)) {
                     keyboard.className = keyType + ' blockGreen';
-                  } else if (chosenWord.toUpperCase().includes(letter)) {
+                } else if (chosenWord.toUpperCase().includes(letter)) {
                     keyboard.className = keyType + ' blockGold';
                 } else {
                     keyboard.className = keyType + ' blockGray';
