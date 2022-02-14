@@ -17,6 +17,7 @@ let restart2;
 let enterClick;
 let deleteClick;
 let objArray = [];
+let greenLetters = [];
 const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 
 let container = document.createElement('div');
@@ -49,6 +50,7 @@ function gameStart() {
     nextRowBlock = 0;
     score = 0;
     remNotification = 0;
+    greenLetters = [];
 
     let logo = document.createElement('div');
     logo.className = 'logo';
@@ -274,6 +276,9 @@ function submitWord(wordRow, keyPress) {
                     if (chosenWord[i].toUpperCase() === letter) {
                         score++;
                         blockClass = ' blockGreen';
+                        if (!greenLetters.includes(letter)) {
+                            greenLetters.push(letter);
+                        }
                         if (count(word, letter) > count(chosenWord, letter)) {
                             for (j = 0; j < wordRow.childNodes.length; j++) {
                                 if (
@@ -299,8 +304,11 @@ function submitWord(wordRow, keyPress) {
                 wordRow.childNodes[i].className = 'row_block ' + blockClass;
                 let keyboard = document.getElementById('keyboard_' + letter);
                 let keyType = keyboard.className.split(' ', 1)[0];
-                if (chosenWord.toUpperCase().includes(letter)) {
+                // Make sure keyboard.class doesn't get two colors
+                if (greenLetters.includes(letter)) {
                     keyboard.className = keyType + ' blockGreen';
+                  } else if (chosenWord.toUpperCase().includes(letter)) {
+                    keyboard.className = keyType + ' blockGold';
                 } else {
                     keyboard.className = keyType + ' blockGray';
                 }
