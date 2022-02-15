@@ -12,8 +12,6 @@ let score = 0;
 let remNotification = 0;
 let gameFin = 0;
 let keyPress;
-let restart;
-let restart2;
 let enterClick;
 let deleteClick;
 let objArray = [];
@@ -32,15 +30,13 @@ function gameOver() {
     document.removeEventListener('keyup', enterClick, false);
     document.removeEventListener('keyup', keyPress, false);
     document.removeEventListener('keyup', restart, false);
-    document.addEventListener(
-        'keyup',
-        (restart = function(event) {
-            if (event.key === 'Enter') {
-                document.removeEventListener('keyup', restart, false);
-                gameStart();
-            }
-        })
-    );
+}
+
+function restart(event) {
+    if (event.key === 'Enter') {
+        document.removeEventListener('keyup', restart, false);
+        gameStart();
+    }
 }
 
 function gameStart() {
@@ -201,6 +197,9 @@ function gameStart() {
                 let wordRow = document.getElementsByClassName('row')[currentRow];
                 let rowBlockEl = wordRow.childNodes;
                 submitWord(wordRow);
+            } else {
+                gameFin = 0;
+                gameStart();
             }
         })
     );
@@ -220,7 +219,8 @@ function gameStart() {
     giveUpBtn.addEventListener('click', function quitClick(event) {
         if (gameFin == 0) {
             notification.innerText =
-                'The word was ' + chosenWord + '. Press Enter to play again';
+                'The word was ' + chosenWord + '. Click Enter to play again';
+            document.addEventListener('keyup', restart);
             gameOver();
         }
     });
@@ -315,11 +315,13 @@ function submitWord(wordRow, keyPress) {
             }
 
             if (score === 5) {
-                notification.innerText = 'Well done, you won! Enter to play again';
+                notification.innerText = 'Well done, you won! Click Enter to play again';
+                document.addEventListener('keyup', restart);
                 gameOver();
             } else if (currentRow == 5) {
                 notification.innerText =
-                    'You lost. The word was ' + chosenWord + '. Press Enter to play again';
+                    'You lost. The word was ' + chosenWord + '. Click Enter to play again';
+                document.addEventListener('keyup', restart);
                 gameOver();
             } else {
                 score = 0;
