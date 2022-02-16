@@ -150,3 +150,7 @@ body {
     background-color: #d7bf4a;
     color: #fff;
 }
+
+input[type='radio']:checked ~ label {
+    font-weight: bold;
+}
