@@ -21,7 +21,8 @@ body {
 
 .logo {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
     cursor: pointer;
     text-shadow: 2px 3px 2px #000;
     transition: 0.5s;
@@ -48,13 +49,6 @@ body {
 
 .logo_green {
     background-color: #35a535;
-}
-
-.levelHeader {
-    font-size: 19px;
-    font-style: italic;
-    margin-top: 11px;
-    margin-left: 25%;
 }
 
 .levelSelector {

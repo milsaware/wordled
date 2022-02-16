@@ -63,19 +63,13 @@ function gameStart() {
     container.append(logo);
 
     /* --- Beginning of difficultyLevel section --- */
-    let selectDifficulty = document.createElement('div');
-    selectDifficulty.className = 'levelHeader';
-    selectDifficulty.id = 'selectDifficulty';
-    selectDifficulty.innerText = 'Select a difficulty level:';
-    container.append(selectDifficulty);
-
     // If you add a difficulty level, add it to this const
     const difficultyLevels = [
-        { value: 'level1', label: '<b>Level 1:</b> 100 words for young children' },
-        { value: 'level2', label: '<b>Level 2:</b> over 1000 common words' },
-        { value: 'level3', label: '<b>Level 3:</b> over 2500 words' },
-        { value: 'level4', label: '<b>Level 4:</b> over 3400 words' },
-        { value: 'level5', label: '<b>Level 5:</b> over 13,000 words' },
+        { value: 'level1', label: '100 words for young children' },
+        { value: 'level2', label: 'over 1000 common words' },
+        { value: 'level3', label: 'over 2500 words' },
+        { value: 'level4', label: 'over 3400 words' },
+        { value: 'level5', label: 'over 13,000 words' },
     ];
     let levelSelector = document.createElement('div');
     levelSelector.className = 'levelSelector';
