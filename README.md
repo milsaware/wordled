@@ -1,4 +1,4 @@
-<p align="center"><img src="https://user-images.githubusercontent.com/95859352/152671096-5e7c2d31-177a-49c0-b952-616071321604.png" alt="wordled logo"></p>
+[<p align="center"><img src="https://user-images.githubusercontent.com/95859352/152671096-5e7c2d31-177a-49c0-b952-616071321604.png" alt="wordled logo"></p>](https://wordled.online)
  
 A Wordle based game made in Javascript
 
