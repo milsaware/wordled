@@ -1,38 +1,4 @@
-let beginner;
-let intermediate;
-let advanced;
-let fullList;
-let currentRow = 0;
-let nextRowBlock = 0;
-let score = 0;
-let remNotification = 0;
-let gameFin = 0;
-let gameOn = 0;
-let maxBlock = 5;
-let level = 'beginner';
-let difficulty = 'easy';
-let mustUse = '';
-let bestStreak = 0;
-let currentStreak = 0;
-let userScore = 0;
-let scoreEasyBeginner = 0;
-let scoreEasyIntermediate = 0;
-let scoreEasyAdvanced = 0;
-let scoreEasyGod = 0;
-let scoreDifficultBeginner = 0;
-let scoreDifficultIntermediate = 0;
-let scoreDifficultAdvanced = 0;
-let scoreDifficultGod = 0;
-let streakEasyBeginner = 0;
-let streakEasyIntermediate = 0;
-let streakEasyAdvanced = 0;
-let streakEasyGod = 0;
-let streakDifficultBeginner = 0;
-let streakDifficultIntermediate = 0;
-let streakDifficultAdvanced = 0;
-let streakDifficultGod = 0;
-let scoreType = 'score';
-let scoreDiff = 'easy';
+let beginner;let intermediate;let advanced;let fullList;let currentRow = 0;let nextRowBlock = 0;let score = 0;let remNotification = 0;let gameFin = 0;let gameOn = 0;let maxBlock = 5;let level = 'beginner';let difficulty = 'easy';let mustUse = '';let bestStreak = 0;let currentStreak = 0;let userScore = 0;let scoreEasyBeginner3 = 0;let scoreEasyIntermediate3 = 0;let scoreEasyAdvanced3 = 0;let scoreEasyGod3 = 0;let scoreEasyBeginner4 = 0;let scoreEasyIntermediate4 = 0;let scoreEasyAdvanced4 = 0;let scoreEasyGod4 = 0;let scoreEasyBeginner5 = 0;let scoreEasyIntermediate5 = 0;let scoreEasyAdvanced5 = 0;let scoreEasyGod5 = 0;let scoreDifficultBeginner3 = 0;let scoreDifficultIntermediate3 = 0;let scoreDifficultAdvanced3 = 0;let scoreDifficultGod3 = 0;let scoreDifficultBeginner4 = 0;let scoreDifficultIntermediate4 = 0;let scoreDifficultAdvanced4 = 0;let scoreDifficultGod4 = 0;let scoreDifficultBeginner5 = 0;let scoreDifficultIntermediate5 = 0;let scoreDifficultAdvanced5 = 0;let scoreDifficultGod5 = 0;let streakEasyBeginner3 = 0;let streakEasyIntermediate3 = 0;let streakEasyAdvanced3 = 0;let streakEasyGod3 = 0;let streakEasyBeginner4 = 0;let streakEasyIntermediate4 = 0;let streakEasyAdvanced4 = 0;let streakEasyGod4 = 0;let streakEasyBeginner5 = 0;let streakEasyIntermediate5 = 0;let streakEasyAdvanced5 = 0;let streakEasyGod5 = 0;let streakDifficultBeginner3 = 0;let streakDifficultIntermediate3 = 0;let streakDifficultAdvanced3 = 0;let streakDifficultGod3 = 0;let streakDifficultBeginner4 = 0;let streakDifficultIntermediate4 = 0;let streakDifficultAdvanced4 = 0;let streakDifficultGod4 = 0;let streakDifficultBeginner5 = 0;let streakDifficultIntermediate5 = 0;let streakDifficultAdvanced5 = 0;let streakDifficultGod5 = 0;let scoreType = 'score';let scoreDiff = 'easy';
 
 const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 
@@ -117,10 +83,10 @@ function openModal(type, notification){
 		}
 	}
 	else if(type == 'charSelect'){
-		for(i = 0; i < 2; i++){
+		for(i = 3; i < 6; i++){
 			let modalBtn = document.createElement('button');
 			modalBtn.className = 'modalBtnL';
-			modalBtn.innerText = (i == 0)? '3 letters' : '5 letters';
+			modalBtn.innerText = i + ' letters';
 			modalBtn.addEventListener('click', charSelect);
 			modal.append(modalBtn);
 			setTimeout(function(){
@@ -276,6 +242,7 @@ function openWindow(url, windowName){
 function addLogo(){
 	let logo = document.createElement('div');
 	logo.className = 'logo';
+	logo.addEventListener("click", logoClick);
 
 	let domName = 'WORDLED';
 	for(i = 0; i < domName.length; i++){
@@ -305,27 +272,63 @@ function changeHelpView(){
 
 function setGlobal(){
 	for(i = 1; i < 16; i++){
-		let lsItem = (i == 1)? 'scoreeasybeginner' : ((i == 2)? 'scoreeasyintermediate' : ((i == 3)? 'scoreeasyadvanced' : ((i == 4)? 'scoreeasygodmode' : ((i == 5)? 'scoredifficultbeginner' : ((i == 6)? 'scoredifficultintermediate' : ((i == 7)? 'scoredifficultadvanced' : ((i == 8)? 'scoredifficultgodmode' : ((i == 9)? 'streakeasybeginner' : ((i == 10)? 'streakeasyintermediate' : ((i == 11)? 'streakeasyadvanced' : ((i == 12)? 'streakeasygodmode' : ((i == 13)? 'streakdifficultbeginner' : ((i == 14)? 'streakdifficultintermediate' : ((i == 15)? 'streakdifficultadvanced' : 'streakdifficultgodmode'))))))))))))));
-		if (localStorage.getItem(lsItem) === null) {
-			localStorage.setItem(lsItem, 0);
+		for(j = 3; j < 6; j++){
+			let lsItem = (i == 1)? 'scoreeasybeginner' + j : ((i == 2)? 'scoreeasyintermediate' + j : ((i == 3)? 'scoreeasyadvanced' + j : ((i == 4)? 'scoreeasygodmode' + j : ((i == 5)? 'scoredifficultbeginner' + j : ((i == 6)? 'scoredifficultintermediate' + j : ((i == 7)? 'scoredifficultadvanced' + j : ((i == 8)? 'scoredifficultgodmode' + j : ((i == 9)? 'streakeasybeginner' + j : ((i == 10)? 'streakeasyintermediate' + j : ((i == 11)? 'streakeasyadvanced' + j : ((i == 12)? 'streakeasygodmode' + j : ((i == 13)? 'streakdifficultbeginner' + j : ((i == 14)? 'streakdifficultintermediate' + j : ((i == 15)? 'streakdifficultadvanced' + j : 'streakdifficultgodmode' + j))))))))))))));
+			if (localStorage.getItem(lsItem) === null) {
+				localStorage.setItem(lsItem, 0);
+			}
 		}
 	}
-	streakEasyBeginner = localStorage.getItem('streakeasybeginner');
-	streakEasyIntermediate = localStorage.getItem('streakeasyintermediate');
-	streakEasyAdvanced = localStorage.getItem('streakeasyadvanced');
-	streakEasyGod = localStorage.getItem('streakeasygodmode');
-	streakDifficultBeginner = localStorage.getItem('streakdifficultbeginner');
-	streakDifficultIntermediate = localStorage.getItem('streakdifficultintermediate');
-	streakDifficultAdvanced = localStorage.getItem('streakdifficultadvanced');
-	streakDifficultGod = localStorage.getItem('streakdifficultgodmode');
-	scoreEasyBeginner = localStorage.getItem('scoreeasybeginner');
-	scoreEasyIntermediate = localStorage.getItem('scoreeasyintermediate');
-	scoreEasyAdvanced = localStorage.getItem('scoreeasyadvanced');
-	scoreEasyGod = localStorage.getItem('scoreeasygodmode');
-	scoreDifficultBeginner = localStorage.getItem('scoredifficultbeginner');
-	scoreDifficultIntermediate = localStorage.getItem('scoredifficultintermediate');
-	scoreDifficultAdvanced = localStorage.getItem('scoredifficultadvanced');
-	scoreDifficultGod = localStorage.getItem('scoredifficultgodmode');
+
+	streakEasyBeginner3 = localStorage.getItem('streakeasybeginner3');
+	streakEasyIntermediate3 = localStorage.getItem('streakeasyintermediate3');
+	streakEasyAdvanced3 = localStorage.getItem('streakeasyadvanced3');
+	streakEasyGod3 = localStorage.getItem('streakeasygodmode3');
+	streakEasyBeginner4 = localStorage.getItem('streakeasybeginner4');
+	streakEasyIntermediate4 = localStorage.getItem('streakeasyintermediate4');
+	streakEasyAdvanced4 = localStorage.getItem('streakeasyadvanced4');
+	streakEasyGod4 = localStorage.getItem('streakeasygodmode4');
+	streakEasyBeginner5 = localStorage.getItem('streakeasybeginner5');
+	streakEasyIntermediate5 = localStorage.getItem('streakeasyintermediate5');
+	streakEasyAdvanced5 = localStorage.getItem('streakeasyadvanced5');
+	streakEasyGod5 = localStorage.getItem('streakeasygodmode5');
+	streakDifficultBeginner3 = localStorage.getItem('streakdifficultbeginner3');
+	streakDifficultIntermediate3 = localStorage.getItem('streakdifficultintermediate3');
+	streakDifficultAdvanced3 = localStorage.getItem('streakdifficultadvanced3');
+	streakDifficultGod3 = localStorage.getItem('streakdifficultgodmode3');
+	streakDifficultBeginner4 = localStorage.getItem('streakdifficultbeginner4');
+	streakDifficultIntermediate4 = localStorage.getItem('streakdifficultintermediate4');
+	streakDifficultAdvanced4 = localStorage.getItem('streakdifficultadvanced4');
+	streakDifficultGod4 = localStorage.getItem('streakdifficultgodmode4');
+	streakDifficultBeginner5 = localStorage.getItem('streakdifficultbeginner5');
+	streakDifficultIntermediate5 = localStorage.getItem('streakdifficultintermediate5');
+	streakDifficultAdvanced5 = localStorage.getItem('streakdifficultadvanced5');
+	streakDifficultGod5 = localStorage.getItem('streakdifficultgodmode5');
+	scoreEasyBeginner3 = localStorage.getItem('scoreeasybeginner3');
+	scoreEasyIntermediate3 = localStorage.getItem('scoreeasyintermediate3');
+	scoreEasyAdvanced3 = localStorage.getItem('scoreeasyadvanced3');
+	scoreEasyGod3 = localStorage.getItem('scoreeasygodmode3');
+	scoreEasyBeginner4 = localStorage.getItem('scoreeasybeginner4');
+	scoreEasyIntermediate4 = localStorage.getItem('scoreeasyintermediate4');
+	scoreEasyAdvanced4 = localStorage.getItem('scoreeasyadvanced4');
+	scoreEasyGod4 = localStorage.getItem('scoreeasygodmode4');
+	scoreEasyBeginner5 = localStorage.getItem('scoreeasybeginner5');
+	scoreEasyIntermediate5 = localStorage.getItem('scoreeasyintermediate5');
+	scoreEasyAdvanced5 = localStorage.getItem('scoreeasyadvanced5');
+	scoreEasyGod5 = localStorage.getItem('scoreeasygodmode5');
+	scoreDifficultBeginner3 = localStorage.getItem('scoredifficultbeginner3');
+	scoreDifficultIntermediate3 = localStorage.getItem('scoredifficultintermediate3');
+	scoreDifficultAdvanced3 = localStorage.getItem('scoredifficultadvanced3');
+	scoreDifficultGod3 = localStorage.getItem('scoredifficultgodmode3');
+	scoreDifficultBeginner4 = localStorage.getItem('scoredifficultbeginner4');
+	scoreDifficultIntermediate4 = localStorage.getItem('scoredifficultintermediate4');
+	scoreDifficultAdvanced4 = localStorage.getItem('scoredifficultadvanced4');
+	scoreDifficultGod4 = localStorage.getItem('scoredifficultgodmode4');
+	scoreDifficultBeginner5 = localStorage.getItem('scoredifficultbeginner5');
+	scoreDifficultIntermediate5 = localStorage.getItem('scoredifficultintermediate5');
+	scoreDifficultAdvanced5 = localStorage.getItem('scoredifficultadvanced5');
+	scoreDifficultGod5 = localStorage.getItem('scoredifficultgodmode5');
+
 	gameFin = 0;
 	currentRow = 0;
 	nextRowBlock = 0;
@@ -365,6 +368,7 @@ function gameOver(){
 	document.removeEventListener('keyup', deleteClick, false);
 	document.removeEventListener('keyup', keyPress, false);
 	document.removeEventListener('keyup', restart, false);
+	document.removeEventListener('click', logoClick, false);
 	document.removeEventListener('click', menuClick, false);
 	document.removeEventListener('click', enterClick, false);
 	document.removeEventListener('click', levelModal, false);
@@ -510,6 +514,12 @@ function enterClick(){
 		let rowBlockEl = wordRow.childNodes;
 		submitWord(wordRow);
 	}
+}
+
+function logoClick(event) {
+	gameOn = 0;
+	container.innerHTML = '';
+	startMenu();
 }
 
 function menuClick(event) {
