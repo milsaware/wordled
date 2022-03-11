@@ -194,7 +194,7 @@ function addSocial(loc){
 
 	let telegramIcon = document.createElement('img');
 	telegramIcon.className = 'modalSocialIcon';
-	telegramIcon.src = '/assets/img/social/telegram_icon.png';
+	telegramIcon.src = './assets/img/social/telegram_icon.png';
 	telegramIcon.title = 'Share on Telegram';
 	telegramIcon.alt = 'Telegram';
 	telegramIcon.addEventListener("click", function(){
@@ -204,7 +204,7 @@ function addSocial(loc){
 
 	let twitterIcon = document.createElement('img');
 	twitterIcon.className = 'modalSocialIcon';
-	twitterIcon.src = '/assets/img/social/twitter_icon.png';
+	twitterIcon.src = './assets/img/social/twitter_icon.png';
 	twitterIcon.title = 'Share on Twitter';
 	twitterIcon.alt = 'Twitter';
 	twitterIcon.addEventListener("click", function(){
@@ -214,7 +214,7 @@ function addSocial(loc){
 
 	let facebookIcon = document.createElement('img');
 	facebookIcon.className = 'modalSocialIcon';
-	facebookIcon.src = '/assets/img/social/facebook_icon.png';
+	facebookIcon.src = './assets/img/social/facebook_icon.png';
 	facebookIcon.title = 'Share on FaceBook';
 	facebookIcon.alt = 'FaceBook';
 	facebookIcon.addEventListener("click", function(){
@@ -224,7 +224,7 @@ function addSocial(loc){
 
 	let redditIcon = document.createElement('img');
 	redditIcon.className = 'modalSocialIcon';
-	redditIcon.src = '/assets/img/social/reddit_icon.png';
+	redditIcon.src = './assets/img/social/reddit_icon.png';
 	redditIcon.title = 'Share on Reddit';
 	redditIcon.alt = 'Reddit';
 	redditIcon.addEventListener("click", function(){
@@ -343,7 +343,7 @@ function startMenu(){
 	}
 	let script = document.createElement('script');
 	script.id = 'wordscript';
-	script.src = '/assets/js/words/' + maxBlock + '.js';
+	script.src = './assets/js/words/' + maxBlock + '.js';
 	document.body.prepend(script);
 	setGlobal();
 	container.innerHTML = '';
