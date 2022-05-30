@@ -25,7 +25,7 @@ a{
 	margin-top: 4px;
 	cursor:pointer;
 	text-shadow: 2px 3px 2px #000;
-	transition:.5s
+	transition: .5s;
 	font-family: fantasy;
 }
 
